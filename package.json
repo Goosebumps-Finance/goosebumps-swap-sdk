@@ -1,17 +1,19 @@
 {
-  "name": "@pancakeswap/sdk",
+  "name": "@goosebumps/sdk",
   "license": "MIT",
-  "version": "2.4.3",
-  "description": "🛠 An SDK for building applications on top of Pancakeswap.",
+  "version": "0.0.1",
+  "description": "🛠 An SDK for building applications on top of Goosebumps.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/pancakeswap/pancake-swap-sdk.git",
+  "repository": "https://github.com/CryptoSnowPrince/goosebumps-swap-sdk.git",
   "keywords": [
-    "pancakeswap",
-    "bsc"
+    "goosebumps",
+    "bsc",
+    "polygon",
+    "ethereum"
   ],
   "module": "dist/sdk.esm.js",
   "scripts": {
