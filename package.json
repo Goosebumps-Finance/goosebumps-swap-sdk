@@ -1,14 +1,17 @@
 {
   "name": "@goosebumps/sdk",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "🛠 An SDK for building applications on top of Goosebumps.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/CryptoSnowPrince/goosebumps-swap-sdk.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CryptoSnowPrince/goosebumps-swap-sdk.git"
+  },
   "keywords": [
     "goosebumps",
     "bsc",
@@ -56,5 +59,13 @@
     "printWidth": 120,
     "semi": false,
     "singleQuote": true
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/CryptoSnowPrince/goosebumps-swap-sdk/issues"
+  },
+  "homepage": "https://github.com/CryptoSnowPrince/goosebumps-swap-sdk#readme",
+  "directories": {
+    "test": "test"
+  },
+  "author": "cryptosnowprince <topdirector2017@gmail.com>"
 }
