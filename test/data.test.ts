@@ -1,7 +1,9 @@
 import { ChainId, WETH, Token, Fetcher } from '../src'
+import { getDefaultProvider } from '@ethersproject/providers'
+import { getNetwork } from '@ethersproject/networks'
 
-const factoryAddress ='0x29237D948ef34fF0988Cb1E604734CC882034a8E'
-const INIT_CODE_HASH = '0x60fde00cc6dd7fb1219dd7545ded4a243a8688296ebccfabef6acdae4d158a2c'
+const factoryAddress ='0xB7926C0430Afb07AA7DEfDE6DA862aE0Bde767bc'
+const INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5'
 
 // TODO: replace the provider in these tests
 describe.skip('data', () => {
@@ -17,7 +19,7 @@ describe.skip('data', () => {
 
   it('Pair', async () => {
     const token = new Token(ChainId.TESTNET, '0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735', 18) // DAI
-    const pair = await Fetcher.fetchPairData(WETH[ChainId.TESTNET], token, factoryAddress, INIT_CODE_HASH)
+    const pair = await Fetcher.fetchPairData(WETH[ChainId.TESTNET], token, getDefaultProvider(getNetwork(token.chainId)), factoryAddress, INIT_CODE_HASH)
     expect(pair.liquidityToken.address).toEqual('0x8B22F85d0c844Cf793690F6D9DFE9F11Ddb35449')
   })
 })
