@@ -60,16 +60,20 @@ export abstract class Fetcher {
    * @param tokenA first token
    * @param tokenB second token
    * @param provider the provider to use to fetch the data
+   * @param factoryAddress the address of the factory contract
+   * @param initCodeHash the pair initCodeHash
    */
   public static async fetchPairData(
     tokenA: Token,
     tokenB: Token,
-    provider = getDefaultProvider(getNetwork(tokenA.chainId))
+    provider = getDefaultProvider(getNetwork(tokenA.chainId)),
+    factoryAddress: string,
+    initCodeHash: string
   ): Promise<Pair> {
     invariant(tokenA.chainId === tokenB.chainId, 'CHAIN_ID')
-    const address = Pair.getAddress(tokenA, tokenB)
+    const address = Pair.getAddress(factoryAddress, initCodeHash, tokenA, tokenB)
     const [reserves0, reserves1] = await new Contract(address, IGooseBumpsSwapPair, provider).getReserves()
     const balances = tokenA.sortsBefore(tokenB) ? [reserves0, reserves1] : [reserves1, reserves0]
-    return new Pair(new TokenAmount(tokenA, balances[0]), new TokenAmount(tokenB, balances[1]))
+    return new Pair(new TokenAmount(tokenA, balances[0]), new TokenAmount(tokenB, balances[1]), factoryAddress, initCodeHash)
   }
 }

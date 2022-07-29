@@ -138,6 +138,8 @@ export class Trade {
    * Constructs an exact in trade with the given amount in and route
    * @param route route of the exact in trade
    * @param amountIn the amount being passed in
+   * @param factoryAddress the address of the factory contract
+   * @param initCodeHash the pair initCodeHash
    */
   public static exactIn(route: Route, amountIn: CurrencyAmount): Trade {
     return new Trade(route, amountIn, TradeType.EXACT_INPUT)
@@ -147,6 +149,8 @@ export class Trade {
    * Constructs an exact out trade with the given amount out and route
    * @param route route of the exact out trade
    * @param amountOut the amount returned by the trade
+   * @param factoryAddress the address of the factory contract
+   * @param initCodeHash the pair initCodeHash
    */
   public static exactOut(route: Route, amountOut: CurrencyAmount): Trade {
     return new Trade(route, amountOut, TradeType.EXACT_OUTPUT)
