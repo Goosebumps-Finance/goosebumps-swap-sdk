@@ -1,5 +1,8 @@
 import { ChainId, WETH, Token, Fetcher } from '../src'
 
+const factoryAddress ='0x29237D948ef34fF0988Cb1E604734CC882034a8E'
+const INIT_CODE_HASH = '0x60fde00cc6dd7fb1219dd7545ded4a243a8688296ebccfabef6acdae4d158a2c'
+
 // TODO: replace the provider in these tests
 describe.skip('data', () => {
   it('Token', async () => {
@@ -14,7 +17,7 @@ describe.skip('data', () => {
 
   it('Pair', async () => {
     const token = new Token(ChainId.TESTNET, '0xc7AD46e0b8a400Bb3C915120d284AafbA8fc4735', 18) // DAI
-    const pair = await Fetcher.fetchPairData(WETH[ChainId.TESTNET], token)
+    const pair = await Fetcher.fetchPairData(WETH[ChainId.TESTNET], token, factoryAddress, INIT_CODE_HASH)
     expect(pair.liquidityToken.address).toEqual('0x8B22F85d0c844Cf793690F6D9DFE9F11Ddb35449')
   })
 })

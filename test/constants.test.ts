@@ -1,7 +1,8 @@
-import { INIT_CODE_HASH } from '../src/constants'
 import fs from 'fs'
 import path from 'path'
 import { keccak256 } from '@ethersproject/solidity'
+
+const INIT_CODE_HASH = '0x60fde00cc6dd7fb1219dd7545ded4a243a8688296ebccfabef6acdae4d158a2c'
 
 const bytecode = fs.readFileSync(path.join(__dirname, './bytecode'), 'utf8')
 
