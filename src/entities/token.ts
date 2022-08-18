@@ -92,7 +92,7 @@ export const WETH = {
   ),
   [ChainId.POLYGON]: new Token(
     ChainId.POLYGON,
-    '0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd',
+    '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
     18,
     'WMATIC',
     'Wrapped Matic',
