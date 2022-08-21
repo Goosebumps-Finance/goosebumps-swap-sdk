@@ -56,7 +56,7 @@ export class Pair {
       tokenAmounts[0].token.chainId,
       Pair.getAddress(factoryAddress, initCodeHash, tokenAmounts[0].token, tokenAmounts[1].token),
       18,
-      'Goosebumps-LP', // used for permit
+      'Goose-lp', // used for permit
       'Goosebumps LPs' // used for permit
     )
     this.factory = factoryAddress
