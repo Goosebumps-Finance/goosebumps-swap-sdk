@@ -1,7 +1,7 @@
 {
   "name": "@goosebumps/sdk",
   "license": "MIT",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "🛠 An SDK for building applications on top of Goosebumps.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -25,6 +25,7 @@
     "build": "tsdx build",
     "start": "tsdx watch",
     "test": "tsdx test",
+    "publish": "npm publish --access public ",
     "prepublishOnly": "tsdx build"
   },
   "dependencies": {
